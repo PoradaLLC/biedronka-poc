@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "**.localdatacdn.com" },
+      { protocol: "https", hostname: "commons.wikimedia.org" },
     ],
   },
 };

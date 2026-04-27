@@ -10,6 +10,13 @@ const BIEDRONKA_PHOTOS = {
   p5: "https://cdn4.localdatacdn.com/pa/stroudsburg/6383899/original/2cO97a0ihm.jpg",
 };
 
+const CATEGORY_PHOTOS = {
+  kielbasa: "https://commons.wikimedia.org/wiki/Special:FilePath/Kielbasas.jpg?width=1200",
+  pastries: "https://commons.wikimedia.org/wiki/Special:FilePath/Doughnuts_and_p%C4%85czki_in_Poland.jpg?width=1200",
+  pierogi: "https://commons.wikimedia.org/wiki/Special:FilePath/Pierogi_in_a_Polish_shop.jpg?width=1200",
+  hotFood: "https://commons.wikimedia.org/wiki/Special:FilePath/Food_of_Poland_-_%C5%BCurek_soup_served_in_bread.jpg?width=1200",
+};
+
 const categories = [
   {
     num: "01",
@@ -18,8 +25,8 @@ const categories = [
     body: "Authentic Polish sausages and smoked meats — the heart of the deli. Ukrainian ham and Grandma's ham are customer favorites. Fresh inventory arrives Thursday and Friday.",
     meta: "Kielbasa · Smoked · Cured",
     featured: true,
-    img: BIEDRONKA_PHOTOS.p3,
-    imgAlt: "Biedronka deli meat counter",
+    img: CATEGORY_PHOTOS.kielbasa,
+    imgAlt: "Assorted Polish kielbasa and smoked sausage",
   },
   {
     num: "02",
@@ -28,8 +35,8 @@ const categories = [
     body: "Pączki, donuts, cakes, rolls, and bread sourced fresh from three New York City bakeries. Delivered Monday, Wednesday, and Thursday through Saturday.",
     meta: "Pączki · Donuts · Fresh Bread",
     featured: false,
-    img: BIEDRONKA_PHOTOS.p4,
-    imgAlt: "Biedronka fresh baked goods",
+    img: CATEGORY_PHOTOS.pastries,
+    imgAlt: "Polish paczki and doughnuts in a bakery case",
   },
   {
     num: "03",
@@ -38,8 +45,8 @@ const categories = [
     body: "Traditional pierogis, golumpki, beet salad, herring, and a rotating selection of authentic Polish prepared foods — ready to take home.",
     meta: "Pierogis · Golumpki · Polish",
     featured: false,
-    img: BIEDRONKA_PHOTOS.p5,
-    imgAlt: "Biedronka prepared Polish foods",
+    img: CATEGORY_PHOTOS.pierogi,
+    imgAlt: "Pierogi for sale in a Polish deli case",
   },
   {
     num: "04",
@@ -48,8 +55,8 @@ const categories = [
     body: "Our new hot food bar — including the magical pickle soup — offers warm, freshly prepared dishes ready to go. Hearty, authentic, and worth the drive.",
     meta: "Hot · Fresh · Daily",
     featured: false,
-    img: BIEDRONKA_PHOTOS.p1,
-    imgAlt: "Biedronka hot food bar",
+    img: CATEGORY_PHOTOS.hotFood,
+    imgAlt: "Polish zurek soup served hot in bread",
   },
   {
     num: "05",
