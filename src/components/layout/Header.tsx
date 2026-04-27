@@ -14,6 +14,8 @@ const navLinks = [
   { label: "Contact", href: "/#contact" },
 ];
 
+const logoSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/logo.png`;
+
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -35,7 +37,7 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="brand">
           <Image
-            src="/images/logo.png"
+            src={logoSrc}
             alt="Biedronka Deli"
             width={180}
             height={52}

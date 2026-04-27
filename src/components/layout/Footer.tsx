@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const logoSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/logo.png`;
+
 export function Footer() {
   return (
     <footer
@@ -16,7 +18,7 @@ export function Footer() {
           <div style={{ maxWidth: 320 }}>
             <Link href="/" className="footer-brand" aria-label="Biedronka Deli home">
               <Image
-                src="/images/logo.png"
+                src={logoSrc}
                 alt="Biedronka Deli"
                 width={180}
                 height={52}
@@ -40,19 +42,19 @@ export function Footer() {
           </div>
 
           <FooterCol title="What We Carry">
-            <a href="/#menu">Smoked Meats &amp; Kielbasa</a>
-            <a href="/#menu">Polish Pastries &amp; Bread</a>
-            <a href="/#menu">Pierogis &amp; Prepared Foods</a>
-            <a href="/#menu">Hot Food Bar</a>
-            <a href="/#menu">Imported Groceries</a>
-            <a href="/#menu">Made-to-Order Deli</a>
+            <Link href="/#menu">Smoked Meats &amp; Kielbasa</Link>
+            <Link href="/#menu">Polish Pastries &amp; Bread</Link>
+            <Link href="/#menu">Pierogis &amp; Prepared Foods</Link>
+            <Link href="/#menu">Hot Food Bar</Link>
+            <Link href="/#menu">Imported Groceries</Link>
+            <Link href="/#menu">Made-to-Order Deli</Link>
           </FooterCol>
 
           <FooterCol title="Visit">
-            <a href="/#about">Our Story</a>
-            <a href="/blog">Blog</a>
-            <a href="/#testimonials">Reviews</a>
-            <a href="/#contact">Contact</a>
+            <Link href="/#about">Our Story</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/#testimonials">Reviews</Link>
+            <Link href="/#contact">Contact</Link>
             <a href="https://maps.app.goo.gl/Ji2ehZkUB54H45C1A" target="_blank" rel="noopener noreferrer">
               Get Directions -&gt;
             </a>
