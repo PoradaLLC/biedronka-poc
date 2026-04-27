@@ -11,7 +11,7 @@ const BIEDRONKA_PHOTOS = {
 };
 
 const CATEGORY_PHOTOS = {
-  kielbasa: "https://commons.wikimedia.org/wiki/Special:FilePath/Kielbasas.jpg?width=1200",
+  kielbasa: "https://commons.wikimedia.org/wiki/Special:FilePath/Uw%C4%99dzona_kie%C5%82basa.jpg?width=1200",
   pastries: "https://commons.wikimedia.org/wiki/Special:FilePath/Doughnuts_and_p%C4%85czki_in_Poland.jpg?width=1200",
   pierogi: "https://commons.wikimedia.org/wiki/Special:FilePath/Pierogi_in_a_Polish_shop.jpg?width=1200",
   hotFood: "https://commons.wikimedia.org/wiki/Special:FilePath/Food_of_Poland_-_%C5%BCurek_soup_served_in_bread.jpg?width=1200",
@@ -26,7 +26,7 @@ const categories = [
     meta: "Kielbasa · Smoked · Cured",
     featured: true,
     img: CATEGORY_PHOTOS.kielbasa,
-    imgAlt: "Assorted Polish kielbasa and smoked sausage",
+    imgAlt: "Smoked homemade kielbasa sausages",
   },
   {
     num: "02",
