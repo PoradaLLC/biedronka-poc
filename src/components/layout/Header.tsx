@@ -2,14 +2,16 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Menu", href: "#menu" },
-  { label: "About", href: "#about" },
-  { label: "Hours", href: "#hours" },
-  { label: "Reviews", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "Menu", href: "/#menu" },
+  { label: "About", href: "/#about" },
+  { label: "Hours", href: "/#hours" },
+  { label: "Reviews", href: "/#testimonials" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
@@ -31,7 +33,7 @@ export function Header() {
         height: 72,
       }}>
         {/* Logo */}
-        <a href="#" className="brand">
+        <Link href="/" className="brand">
           <Image
             src="/images/logo.png"
             alt="Biedronka Deli"
@@ -40,18 +42,18 @@ export function Header() {
             style={{ objectFit: "contain", height: 44, width: "auto" }}
             priority
           />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="nav-desktop" style={{ display: "flex", gap: 32 }} aria-label="Primary">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               style={{ fontSize: 13.5, fontWeight: 600, color: "var(--charcoal)", letterSpacing: "0.02em" }}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -79,14 +81,14 @@ export function Header() {
           background: "#fff",
         }}>
           {navLinks.map(link => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
               style={{ padding: "12px 4px", fontSize: 15, fontWeight: 600, color: "var(--charcoal)" }}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
             href="tel:+15707304464"
