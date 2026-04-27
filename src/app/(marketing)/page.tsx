@@ -2,6 +2,8 @@ import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
 
 // Real Biedronka Deli photos sourced from Google Maps listing
+const publicBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const BIEDRONKA_PHOTOS = {
   p1: "https://cdn6.localdatacdn.com/pa/stroudsburg/6383899/original/3FYacwytH1.jpg",
   p2: "https://cdn6.localdatacdn.com/pa/stroudsburg/6383899/original/UYK1oMtgXO.jpg",
@@ -13,7 +15,7 @@ const BIEDRONKA_PHOTOS = {
 const CATEGORY_PHOTOS = {
   kielbasa: "https://commons.wikimedia.org/wiki/Special:FilePath/Uw%C4%99dzona_kie%C5%82basa.jpg?width=1200",
   pastries: "https://commons.wikimedia.org/wiki/Special:FilePath/Doughnuts_and_p%C4%85czki_in_Poland.jpg?width=1200",
-  pierogi: "https://commons.wikimedia.org/wiki/Special:FilePath/Pierogi_in_a_Polish_shop.jpg?width=1200",
+  pierogi: `${publicBasePath}/images/pierogi.jpg`,
   hotFood: "https://commons.wikimedia.org/wiki/Special:FilePath/Food_of_Poland_-_%C5%BCurek_soup_served_in_bread.jpg?width=1200",
 };
 

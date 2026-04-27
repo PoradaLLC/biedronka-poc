@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -83,9 +84,9 @@ export default function BlogPage() {
                   </div>
                   <h2 className="font-serif">{post.title}</h2>
                   <p>{post.excerpt}</p>
-                  <a href="/#contact" className="blog-card-link">
+                  <Link href="/#contact" className="blog-card-link">
                     Ask about this -&gt;
-                  </a>
+                  </Link>
                 </div>
               </article>
             ))}
