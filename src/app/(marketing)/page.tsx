@@ -1,61 +1,67 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
 
-const HERO_IMG =
-  "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=2000&q=80";
+// Real Biedronka Deli photos sourced from Google Maps listing
+const BIEDRONKA_PHOTOS = {
+  p1: "https://cdn6.localdatacdn.com/pa/stroudsburg/6383899/original/3FYacwytH1.jpg",
+  p2: "https://cdn6.localdatacdn.com/pa/stroudsburg/6383899/original/UYK1oMtgXO.jpg",
+  p3: "https://cdn4.localdatacdn.com/pa/stroudsburg/6383899/original/GdT9MJrigT.jpg",
+  p4: "https://cdn4.localdatacdn.com/pa/stroudsburg/6383899/original/j80aHGQkux.jpg",
+  p5: "https://cdn4.localdatacdn.com/pa/stroudsburg/6383899/original/2cO97a0ihm.jpg",
+};
 
-const ABOUT_IMG =
-  "https://images.unsplash.com/photo-1534482421-64566f976cfa?w=1200&q=80";
+const HERO_IMG = BIEDRONKA_PHOTOS.p1;
+const ABOUT_IMG = BIEDRONKA_PHOTOS.p2;
 
 const categories = [
   {
     num: "01 — Signature",
     title: "Smoked Meats & Kielbasa",
-    body: "Authentic Polish sausages and smoked meats — the heart of the deli. Fresh inventory arrives Thursday and Friday so you always get the best cut.",
+    body: "Authentic Polish sausages and smoked meats — the heart of the deli. Fresh inventory arrives Thursday and Friday so you always get the best cut. Ukrainian ham and Grandma's ham are customer favorites.",
     meta: "Kielbasa · Smoked · Cured",
     featured: true,
-    img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
-    imgAlt: "Assorted smoked sausages and kielbasa at the deli counter",
+    img: BIEDRONKA_PHOTOS.p3,
+    imgAlt: "Biedronka deli interior showing meat selection",
   },
   {
     num: "02",
     title: "Polish Pastries & Bread",
-    body: "Donuts, cakes, rolls, and bread sourced fresh from three New York City bakeries. Delivered Monday, Wednesday, and Thursday through Saturday.",
-    meta: "Donuts · Cakes · Rolls",
-    img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80",
-    imgAlt: "Fresh Polish pastries and bread loaves from the bakery",
+    body: "Donuts, pączki, cakes, rolls, and bread sourced fresh from three New York City bakeries. Delivered Monday, Wednesday, and Thursday through Saturday.",
+    meta: "Donuts · Pączki · Bread",
+    img: BIEDRONKA_PHOTOS.p4,
+    imgAlt: "Biedronka fresh baked goods and pastries",
   },
   {
     num: "03",
     title: "Pierogis & Prepared Foods",
-    body: "Traditional pierogis and a rotating selection of authentic Polish prepared foods — ready to take home and enjoy.",
-    meta: "Pierogis · Ready-Made · Polish",
-    img: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=800&q=80",
-    imgAlt: "Freshly made pierogis and prepared Polish dishes",
+    body: "Traditional pierogis, golumpki, beet salad, herring, rye bread, and a rotating selection of authentic Polish prepared foods — ready to take home.",
+    meta: "Pierogis · Golumpki · Polish",
+    img: BIEDRONKA_PHOTOS.p5,
+    imgAlt: "Biedronka prepared Polish foods and specialty items",
   },
   {
     num: "04",
     title: "Hot Food Bar",
-    body: "Our new hot food bar offers warm, freshly prepared dishes ready to go. Hearty, authentic, and worth the drive — as our customers say.",
+    body: "Our new hot food bar — including magical pickle soup — offers warm, freshly prepared dishes ready to go. Hearty, authentic, and worth the drive.",
     meta: "Hot · Fresh · Daily",
-    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
-    imgAlt: "Hot food bar with freshly prepared Polish dishes",
+    img: BIEDRONKA_PHOTOS.p1,
+    imgAlt: "Biedronka hot food bar with freshly prepared dishes",
   },
   {
     num: "05",
     title: "Imported Groceries",
-    body: "A curated selection of imported Polish snacks, candies, jarred pickles, condiments, and pantry staples you won't find anywhere else in the Poconos.",
-    meta: "Imported · Pantry · Polish",
-    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
-    imgAlt: "Shelves of imported Polish grocery products and pantry items",
+    body: "A curated selection of imported Polish snacks, candies, Kinder eggs, sauerkraut, jarred pickles, condiments, and pantry staples straight from Europe.",
+    meta: "Imported · Pantry · European",
+    img: BIEDRONKA_PHOTOS.p2,
+    imgAlt: "Biedronka store with imported Polish groceries",
   },
   {
     num: "06",
     title: "Made-to-Order Deli",
-    body: "Step up to the counter for a freshly made sandwich or salad. Our staff knows the menu inside out and will help you build exactly what you're craving.",
+    body: "Step up to the 35-foot meat section counter for a freshly made sandwich or salad. Our knowledgeable staff will guide you through every cut and cured option.",
     meta: "Sandwiches · Salads · Custom",
-    img: "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=800&q=80",
-    imgAlt: "Deli counter with fresh meats and cheese for made-to-order sandwiches",
+    img: BIEDRONKA_PHOTOS.p3,
+    imgAlt: "Biedronka deli counter with fresh meats and cheeses",
   },
 ];
 
@@ -68,28 +74,76 @@ const stats = [
 
 const testimonials = [
   {
-    quote:
-      "Best Polish Deli in the PA area — food is always fresh and staff is always ready to help out.",
-    who: "Google Reviewer",
-    role: "Stroudsburg, PA",
+    quote: "Absolutely LOVE this place! The owner Klaudia is such a wonderful person and her staff. So many different delicious items to choose from. They were so very helpful. Felt so very welcomed. So clean, organized, and professional. This will be my families go to Polish Deli!",
+    who: "Henry Brendon Kotowski",
+    role: "Local Guide · Google Review",
+    initials: "HK",
   },
   {
-    quote:
-      "The owner Klaudia is such a wonderful person. So clean, organized, and professional. Large selection of everything you could want.",
-    who: "Verified Customer",
-    role: "August 2024",
+    quote: "Amazing selection of fresh deli food, hot prepared food, and pantry items. The store is incredibly clean, everyone is friendly, and the prices are great. The pickle soup is magical!",
+    who: "Sarah Bauch",
+    role: "Local Guide · 51 reviews · Google",
+    initials: "SB",
   },
   {
-    quote:
-      "Large selection. They now have a hot bar of food. Food is tasty. Worth the drive.",
-    who: "Google Reviewer",
-    role: "December 2025",
+    quote: "Great Polish deli that hits the spot for smoked meats and other goodies! The new building (just to the left of the old spot) is much more spacious, and it is great to see a local business thriving.",
+    who: "Laurent Bourg",
+    role: "Local Guide · 46 reviews · Google",
+    initials: "LB",
   },
   {
-    quote:
-      "Lovely people, delicious, authentic foods. An impressive selection of meats, breads, and products — just like a great NYC deli.",
-    who: "Verified Customer",
-    role: "Pocono Mountains",
+    quote: "Best polish store in all of Pennsylvania, worth the drive regardless of where you live. I haven't seen a selection of products like this anywhere. Owners go above and beyond — they treat their customers like family. 10/10.",
+    who: "Maciej Nicpon",
+    role: "Google Review",
+    initials: "MN",
+  },
+  {
+    quote: "I had a very positive experience shopping at Biedronka. This is truly one of the best places in the area for authentic Polish products and flavors from home. The selection is impressive — from fresh deli meats and more.",
+    who: "Kasia B",
+    role: "Local Guide · 110 reviews · Google",
+    initials: "KB",
+  },
+  {
+    quote: "First time going to this store I found it to be amazing! I strongly recommend the Ukraine ham, Swiss cheese, the golumpki, and the rye bread. The beet salad, the herring — all incredible.",
+    who: "Priscilla Maciejeski",
+    role: "Google Review",
+    initials: "PM",
+  },
+  {
+    quote: "My wife, being Polish, insists on going here every time we go to the Poconos! Their selection of deli meats is incredible. We especially love the Ukrainian ham and the Grandma's ham. Also a wide variety of Polish products straight from Europe!",
+    who: "Stephen Ranker",
+    role: "Local Guide · 88 reviews · Google",
+    initials: "SR",
+  },
+  {
+    quote: "New store, right next to old one. Large selection. They now have a hot bar of food. Food is tasty. Worth the drive.",
+    who: "JNP 123",
+    role: "Local Guide · 85 reviews · Google",
+    initials: "JN",
+  },
+  {
+    quote: "2025: best selection of Polish food in the area now! They moved over to the old A&A building a few weeks ago and glad that someone took over that building. Great selection of foods and drinks and they have a deli counter.",
+    who: "Peter Vernacchia",
+    role: "Local Guide · 342 reviews · Google",
+    initials: "PV",
+  },
+  {
+    quote: "Just purchased the smoked salmon and it was one of the best I had on the east coast. Melts in your mouth. All the meats, cheese, bakery goods at the counter are fresh.",
+    who: "Joey Joey",
+    role: "Local Guide · 147 reviews · Google",
+    initials: "JJ",
+  },
+  {
+    quote: "My Polish husband is so happy. What a selection at this store! Friendly employees. They seriously have anything your Polish culinary dreams could want. Better than Biedronka in Poland!",
+    who: "Tatiana Johnson",
+    role: "Local Guide · 28 reviews · Google",
+    initials: "TJ",
+  },
+  {
+    quote: "Lovely people, delicious, authentic foods. Best wishes for their expansion.",
+    who: "Marcia Fenlon",
+    role: "Local Guide · 96 reviews · Google",
+    initials: "MF",
   },
 ];
 
@@ -107,26 +161,11 @@ const marqueeItems = [
 ];
 
 const stripImages = [
-  {
-    src: "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
-    alt: "Assorted smoked sausages and cured meats",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80",
-    alt: "Fresh Polish bread and pastries",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=800&q=80",
-    alt: "Deli counter with fresh meats and cheeses",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=800&q=80",
-    alt: "Pierogis and Polish prepared foods",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
-    alt: "Freshly prepared hot dishes",
-  },
+  { src: BIEDRONKA_PHOTOS.p1, alt: "Biedronka Deli — store view" },
+  { src: BIEDRONKA_PHOTOS.p2, alt: "Biedronka Deli — product selection" },
+  { src: BIEDRONKA_PHOTOS.p3, alt: "Biedronka Deli — deli counter" },
+  { src: BIEDRONKA_PHOTOS.p4, alt: "Biedronka Deli — baked goods" },
+  { src: BIEDRONKA_PHOTOS.p5, alt: "Biedronka Deli — prepared foods" },
 ];
 
 export default function HomePage() {
@@ -552,26 +591,48 @@ function Testimonials() {
           <h2 className="font-serif font-medium tracking-[-0.015em] leading-[1.04] text-[clamp(38px,4.6vw,64px)] mt-3.5">
             Worth the drive.
           </h2>
+          <p className="text-[16px] text-slate mt-4">
+            Real reviews from Google Maps — 77+ and counting.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
           {testimonials.map((t) => (
             <div
               key={t.who + t.role}
-              className="bg-paper rounded-2xl shadow-sm ring-1 ring-ink/[0.08] p-10 flex flex-col min-h-[280px]"
+              className="bg-paper rounded-2xl shadow-sm ring-1 ring-ink/[0.08] p-8 flex flex-col"
             >
-              <div className="text-[14px] tracking-[2px] mb-6" style={{ color: "var(--red)" }}>
-                ★★★★★
+              <div className="flex items-center gap-3 mb-5">
+                <div
+                  className="shrink-0 w-10 h-10 rounded-full grid place-items-center font-serif font-bold text-[15px] text-cream"
+                  style={{ background: "var(--red)" }}
+                >
+                  {t.initials}
+                </div>
+                <div>
+                  <div className="font-semibold text-[13px] text-ink leading-tight">{t.who}</div>
+                  <div className="text-[11px] text-slate-2 mt-0.5 tracking-[0.01em]">{t.role}</div>
+                </div>
+                <div className="ml-auto text-[12px] tracking-[2px]" style={{ color: "var(--red)" }}>
+                  ★★★★★
+                </div>
               </div>
-              <p className="font-serif italic text-[19px] leading-[1.55] text-ink mb-7 font-normal">
+              <p className="font-serif italic text-[16px] leading-[1.6] text-ink font-normal flex-1">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <div className="mt-auto pt-6 border-t border-ink/[0.12]">
-                <div className="font-semibold text-[14px] text-ink">{t.who}</div>
-                <div className="text-[12px] text-slate-2 mt-0.5 tracking-[0.02em]">{t.role}</div>
-              </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12">
+          <a
+            href="https://maps.app.goo.gl/Ji2ehZkUB54H45C1A"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ink"
+          >
+            See all reviews on Google →
+          </a>
         </div>
       </div>
     </section>
