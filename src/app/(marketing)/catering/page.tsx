@@ -473,25 +473,81 @@ function SeasonalBanner() {
   );
 }
 
-/* ─── Gallery strip ─────────────────────────────────────────────────────────── */
+/* ─── Gallery grid ──────────────────────────────────────────────────────────── */
+const galleryGrid = [
+  { src: P.holiday,  alt: "Roasted duck in holiday catering tray",  label: "Holiday Entrées",   sub: "Whole roasted duck & turkey" },
+  { src: P.bacon,    alt: "Bacon-wrapped chicken rolls on tray",     label: "Baked Entrées",     sub: "Made fresh to order" },
+  { src: P.kielbasa, alt: "Smoked kielbasa sausage assortment",      label: "Smoked Kielbasa",   sub: "House-smoked rings & links" },
+];
+
 function GalleryStrip() {
   return (
-    <div style={{ display: "flex", overflow: "hidden", borderTop: "4px solid var(--red)" }}>
-      {galleryPhotos.map((photo) => (
-        <div
-          key={photo.src}
-          style={{ position: "relative", flexShrink: 0, flex: 1, height: 300, minWidth: "60vw" }}
-          className="md:min-w-0"
-        >
-          <Image
-            src={photo.src}
-            alt={photo.alt}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 60vw, 20vw"
-          />
-        </div>
-      ))}
+    <div style={{ borderTop: "4px solid var(--red)" }}>
+      <div className="gallery-grid">
+        {galleryGrid.map((photo) => (
+          <div
+            key={photo.src}
+            className="gallery-cell group"
+            style={{ position: "relative", overflow: "hidden" }}
+          >
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
+            {/* Gradient overlay */}
+            <div
+              aria-hidden
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: "linear-gradient(to top, rgba(20,10,10,0.78) 0%, rgba(0,0,0,0.18) 52%, transparent 100%)",
+              }}
+            />
+            {/* Label */}
+            <div style={{ position: "absolute", bottom: 28, left: 28, right: 28 }}>
+              <div
+                style={{
+                  fontSize: 10,
+                  fontWeight: 700,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase",
+                  color: "var(--red)",
+                  marginBottom: 7,
+                  fontFamily: "var(--font-ui), sans-serif",
+                }}
+              >
+                Biedronka Catering
+              </div>
+              <div
+                className="font-serif"
+                style={{ fontSize: "clamp(20px, 1.8vw, 26px)", fontWeight: 600, color: "#fff", lineHeight: 1.15, letterSpacing: "-0.01em" }}
+              >
+                {photo.label}
+              </div>
+              <div
+                style={{ fontSize: 13, color: "rgba(255,255,255,0.62)", marginTop: 5, fontFamily: "var(--font-ui), sans-serif" }}
+              >
+                {photo.sub}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <style>{`
+        .gallery-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .gallery-cell { height: 460px; }
+        @media (max-width: 768px) {
+          .gallery-grid { grid-template-columns: 1fr; }
+          .gallery-cell { height: 320px; }
+        }
+      `}</style>
     </div>
   );
 }
