@@ -52,6 +52,7 @@ export function Footer() {
 
           <FooterCol title="Visit">
             <Link href="/#about">Our Story</Link>
+            <Link href="/catering">Catering</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/#testimonials">Reviews</Link>
             <Link href="/#contact">Contact</Link>
